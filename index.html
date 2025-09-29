@@ -1,44 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script type="module" src="./main.js"></script>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="music-player">
-            <nav>
-                <div class="circle">
-                    <span>back</span>
-                </div>
-                <div class="circle">
-                    <span>bars</span>
-                </div>
-            </nav>
+
+    <div class="music-container">
+        <main class="player-main">
+            <div class="header">
+                <i class="fa-solid fa-record-vinyl"></i>
+                <span>Music</span>
+            </div>
+            
+            <img src="https://picsum.photos/200" alt="Carátula de la canción" id="song-img">
 
             <div id="song-details">
-                <img src="./media/default_img.jpg" alt="" id="song-img">
-                <h1 id="title"></h1>
-                <h3 id="artist"></h3>
+                <h1 id="title">Nombre de la Canción</h1>
+                <h3 id="artist">Nombre del Artista</h3>
+                <i class="fa-regular fa-heart"></i>
             </div>
 
-            <div class="audio">
-                <audio controls id="media" hidden>
-                    <!--<source id="audio" src="" type="audio/mpeg">-->
-                </audio>
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
                 <input type="range" value="0" id="progress">
+                <span id="total-duration">0:00</span>
             </div>
 
             <div class="song-controls">
-                <span id="lastest">last</span>
-                <span id="play" class="play">play</span>
-                <span id="forward">forward</span>
+                <span id="shuffle"><i class="fa-solid fa-shuffle"></i></span>
+                <span id="lastest"><i class="fa-solid fa-backward-step"></i></span>
+                <span id="play" class="play"><i class="fa-solid fa-play"></i></span>
+                <span id="forward"><i class="fa-solid fa-forward-step"></i></span>
+                <span id="repeat"><i class="fa-solid fa-repeat"></i></span>
             </div>
 
-        </div>
+            <audio id="media"></audio>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Recent Played</h2>
+                <a href="#">See All</a>
+            </div>
+
+            <ul class="playlist-sidebar">
+                <li>
+                    <div class="song-item">
+                        <img src="https://picsum.photos/id/101/50" alt="cover">
+                        <div class="song-info">
+                            <p class="title">Perfect</p>
+                            <p class="artist">Ed Sheeran</p>
+                        </div>
+                    </div>
+                    <span class="time">2min ago</span>
+                </li>
+                <li>
+                    <div class="song-item">
+                        <img src="https://picsum.photos/id/102/50" alt="cover">
+                        <div class="song-info">
+                            <p class="title">Roman Picisan</p>
+                            <p class="artist">Hanin Dhiya, Ah...</p>
+                        </div>
+                    </div>
+                    <span class="time">8min ago</span>
+                </li>
+                 <li>
+                    <div class="song-item">
+                        <img src="https://picsum.photos/id/103/50" alt="cover">
+                        <div class="song-info">
+                            <p class="title">Tittle (Deluxe)</p>
+                            <p class="artist">Meghan Trainor</p>
+                        </div>
+                    </div>
+                    <span class="time">2hr ago</span>
+                </li>
+            </ul>
+
+            <div class="volume-control">
+                <i class="fa-solid fa-volume-high"></i>
+                <div class="volume-slider"></div>
+            </div>
+        </aside>
     </div>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>
