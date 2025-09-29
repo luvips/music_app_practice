@@ -1,118 +1,97 @@
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.music-player {
-    background: yellow;
+body {
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-@media (orientation: landscape) and (width >= 800px) and (width <= 1920px){}
 
-@media(orientation: landscape) and (800px <= width <= 1920px) {
-    .music-player{
-        background: red;
-    }
+.music-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-@media(orientation: portrait) {
-    .music-player{
-        width: 100%;
-        height: 100vh;
-        background: #ffe0e5;
-        padding: 25px 35px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        box-sizing: border-box; 
-    }
-    nav{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-    nav > .circle {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        background: #fff;
-        color: #f53192;
-        box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
-        border-radius: 50px;
-    }
 
-    #song-img {
-        width: 220px;
-        border-radius: 50%;
-        border: 8px solid #fff;
-        box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
-    }
+.player-main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    justify-content: space-around; 
+}
 
-    .music-player > #song-details > h1 {
-        font-size: 20px;
-        font-weight: 400;
-        color: #333;
-        margin-top: 20px;
-    }
 
-    .music-player > #song-details > h3 {
-        font-size: 14px;
-        color: #333;
-    }
+.sidebar {
+    background-color: #1a1a1a;
+    padding: 20px;
+}
 
-    #progress {
-        appearance: none;
-        width: 100%;
-        height: 5px;
-        background: #f53192;
-        border-radius: 4px;
-        cursor: pointer;
-        margin: 40px 0;
-    }
+.sidebar-header {
+    margin-bottom: 20px;
+}
 
-    #progress::-moz-range-track{
-        height: 10px;
-        padding: 10px 0;
-        background-clip: content-box;
-        border-radius: 5px;
-    }
+#song-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
 
-    #progress::-moz-range-thumb{
-        appearance: none;
-        background: #f53192;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: 8px solid #fff;
-        box-shadow: 0 5px 5px rgba(255, 25, 25, 0.22);
-    }
+#song-details {
+    text-align: center;
+}
 
-    .song-controls{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+#song-details h1 {
+    font-size: 22px;
+}
 
-    .song-controls > span {
-        width: 60px;
-        height: 60px;
-        margin: 20px;
-        background: #fff;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        color: #f53192;
-        box-shadow: 0 10px 20px rgba(255, 26, 26, 0.22);
-        cursor: pointer;
-    }
+#song-details h3 {
+    font-size: 14px;
+    color: #b3b3b3;
+}
 
-    .song-controls > span:nth-child(2){
-        transform: scale(1.5);
-        background: #f53192;
-        color: #fff;
-    }
+.progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#progress {
+    width: 100%;
+}
 
+.song-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.song-controls span#play {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
 }
